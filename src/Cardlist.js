@@ -12,7 +12,7 @@ const Cardlist = ({robots}) =>{
             />);
     });
     return(
-        <div>
+        <div className='tc'>
             {cardsArray}
         </div>
     );
