@@ -3,6 +3,7 @@ import Cardlist from './Cardlist';
 import SearchBox from './SearchBox';
 // import { robots } from './robots';
 import './App.css'
+import Scroll from './Scroll'   //creating a scroll component
 
 
 class App extends Component{
@@ -42,7 +43,10 @@ class App extends Component{
                 <div className='pa2'>
                     <h1 className='tc f1'>RoboFriends</h1>
                     <SearchBox searchChange = {this.onSearchChange}/>
-                    <Cardlist robots = {filteredRobots}/>
+                    <Scroll>
+                        <Cardlist robots = {filteredRobots}/>
+                    </Scroll>
+                    
                 </div>
             )
         }
