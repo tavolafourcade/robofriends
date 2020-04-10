@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import Card from './Card';
 // import Cardlist from './Cardlist';
-import App from './App';  //father of all components
+import App from './containers/App.js';  //father of all components
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 // import { robots } from './robots';
@@ -19,3 +19,6 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+// using json placeholder, life cycle methods (they trigger when the app is
+// loaded on the website)
