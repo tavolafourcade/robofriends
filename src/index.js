@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider } from 'react-redux';
 
 import './index.css';
@@ -11,8 +11,10 @@ import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 import { searchRobots } from './reducers';
 // import { robots } from './robots';
+import { createLogger } from 'redux-logger';
 
-const store = createStore(searchRobots);
+const logger = createLogger();
+const store = createStore(searchRobots, applyMiddleware(logger));
 
 ReactDOM.render(
   <React.StrictMode>
