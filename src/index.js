@@ -1,18 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from 'redux';
+import {Provider } from 'react-redux';
+
 import './index.css';
 // import Card from './Card';
 // import Cardlist from './Cardlist';
 import App from './containers/App.js';  //father of all components
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
+import { searchRobots } from './reducers';
 // import { robots } from './robots';
+
+const store = createStore(searchRobots);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root') 
 );
 
 // If you want your app to work offline and load faster, you can change
